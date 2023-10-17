@@ -1,10 +1,22 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+for (let i = 0; i < array.length; i++) {
+  for (let j = i + 1; j < array.length; j++) {
+    if (array[i] + array[j] === target) {
+      return true;
+    }
+  }
+}
+return false; 
 }
 
+//Test cases
+console.log(ahrsTargetSUm([3,8,12,4,11, 7, 10)); // Exepcting : true 
+console.log(harsTargetSume([22,19,4,6,30, 25)); // Exepcting : true 
+console.log(harsTargetSume([1,2,5], 4)); // Exepcting; false
 /* 
   Write the Big O time complexity of your function here
-*/
+  The time complexity of this soulution is 0(n^2), where n is the length of the array. this is since we use a nested loop to iterate  pairs of numbers.
+/^
 
 /* 
   Add your pseudocode here
