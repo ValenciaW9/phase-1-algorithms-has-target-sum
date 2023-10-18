@@ -1,17 +1,29 @@
 function hasTargetSum(array, target) {
   for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] + array[j] === target) {
+    for (let j = 0; j < array.length; j++) {
+      if (i !== j && array[i] + array[j] === target) {
         return true;
       }
     }
   }
-  return false; 
+  return false;
+}
+
+console.log(hasTargetSum([22, 19, 4, 6, 30, 250], 30));
+console.log(hasTargetSum([1, 2, 5], 4));
+
+var twoSum = function(nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < nums.length; j++) {
+      if (i !== j && nums[i] + nums[j] === target) {
+        return [i, j];
+      }
+    }
   }
-  
-  //Test cases
-  console.log(harsTargetSume([22,19,4,6,30, 25)); // Exepcting: true 
-  console.log(harsTargetSume([1,2,5], 4)); // Exepcting: false
+};
+
+console.log(twoSum([3, 2, 4], 6));
+
   /* 
     Write the Big O time complexity of your function here
     The time complexity of this soulution is 0(n^2), where n is the length of the array. this is since we use a nested loop to iterate  pairs of numbers.
